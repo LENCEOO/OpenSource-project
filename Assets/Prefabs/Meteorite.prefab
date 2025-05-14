@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -5108386584984211827}
   m_Layer: 0
   m_Name: Meteorite
-  m_TagString: Untagged
+  m_TagString: Meteorite
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -130,6 +130,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6783b8a78d444dcdae6ea0e263be5df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 5
+  explosionPrefab: {fileID: 6322828455706656067, guid: abb1b046304972447ae4884ae2c533e5, type: 3}
 --- !u!114 &-5108386584984211827
 MonoBehaviour:
   m_ObjectHideFlags: 0

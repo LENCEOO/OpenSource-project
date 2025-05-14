@@ -4,9 +4,29 @@ using UnityEngine;
 
 public class Meterorite : MonoBehaviour
 {
+    [SerializeField]
+    private int damage = 5;
+    [SerializeField]
+    private GameObject explosionPrefab;
+
    private void OnTriggerEnter2D(Collider2D collision){
-        if(collision.CompareTag("Player")){
-            Destroy(gameObject);
+        if(collision.CompareTag("Player"))
+        {
+            collision.GetComponent<PlayerHP>().TakeDamage(damage);
+            // 폭발 이펙트 생성
+            //Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+            // 운석 사망
+            //Destroy(gameObject);
+            // 운석 사망 처리 함수
+            OnDie();
         }
+   }
+
+   public void OnDie()
+   {
+        // 폭발 이펙트 생성
+        Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+        // 운석 사망
+        Destroy(gameObject);
    }
 }
